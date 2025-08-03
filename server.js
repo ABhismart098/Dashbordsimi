@@ -24,5 +24,6 @@ connectDB();
 app.use('/api', indexRoutes);
 
 // Start Server
+const Ip = process.env.Ip || "0.0.0.0"
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, Ip, () => console.log(`Server running on port ${PORT}`));
